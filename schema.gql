@@ -1,0 +1,15 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CategoryModel {
+  id: Int!
+  name: String!
+  slug: String!
+}
+
+type Query {
+  allCategories: [CategoryModel!]!
+  filterCategory(category: String!): [CategoryModel!]!
+  filterCategories(category: [String!]!): [CategoryModel!]!
+}
