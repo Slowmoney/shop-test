@@ -8,8 +8,20 @@ type CategoryModel {
   slug: String!
 }
 
+type ProductModel {
+  id: Int!
+  name: String!
+  slug: String!
+  category_id: Float!
+  category: CategoryModel!
+  price: Float!
+}
+
 type Query {
   allCategories: [CategoryModel!]!
   filterCategory(category: String!): [CategoryModel!]!
   filterCategories(category: [String!]!): [CategoryModel!]!
+  allProducts: [ProductModel!]!
+  filterProduct(category: String!): [ProductModel!]!
+  filterProducts(category: [String!]!): [ProductModel!]!
 }
