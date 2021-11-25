@@ -8,6 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ProductsModule } from './products/products.module';
+import { BasketModule } from './basket/basket.module';
 
 @Module({
   imports: [
@@ -23,11 +24,13 @@ import { ProductsModule } from './products/products.module';
           path: '/graphql',
         },
       },
+      context: ({ req }) => ({ headers: req.headers }),
     }),
     AuthModule,
     CategoryModule,
     UsersModule,
     ProductsModule,
+    BasketModule,
   ],
   controllers: [AppController],
   providers: [AppService],

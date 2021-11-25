@@ -41,4 +41,7 @@ export class ProductsService {
       relations: ['category'],
     });
   }
+  findById(id: number) {
+    return this.productsRepository.findOne({ where: { id } });
+  }
 }

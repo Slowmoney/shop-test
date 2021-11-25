@@ -2,6 +2,10 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type AccessTokenModel {
+  accessToken: String!
+}
+
 type CategoryModel {
   id: Int!
   name: String!
@@ -17,6 +21,12 @@ type ProductModel {
   price: Float!
 }
 
+type BasketModel {
+  id: Int!
+  userId: Int!
+  products: [ProductModel!]
+}
+
 type Query {
   allCategories: [CategoryModel!]!
   filterCategory(category: String!): [CategoryModel!]!
@@ -24,4 +34,10 @@ type Query {
   allProducts: [ProductModel!]!
   filterProduct(category: String!): [ProductModel!]!
   filterProducts(category: [String!]!): [ProductModel!]!
+  getBasket: BasketModel!
+}
+
+type Mutation {
+  login(password: String!, username: String!): AccessTokenModel!
+  addProductToBasket(productId: Float!): BasketModel!
 }

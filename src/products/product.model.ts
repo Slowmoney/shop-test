@@ -28,7 +28,7 @@ export default class ProductModel {
   @Column()
   category_id: number;
 
-  @ManyToOne((type) => CategoryModel, (c) => c.id)
+  @ManyToOne((type) => CategoryModel, (c) => c.id, { eager: true })
   @JoinColumn({ name: 'category_id' })
   @Field((type) => CategoryModel)
   category: CategoryModel;
