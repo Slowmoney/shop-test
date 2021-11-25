@@ -21,10 +21,16 @@ type ProductModel {
   price: Float!
 }
 
+type BasketItemModel {
+  id: Int!
+  basket: BasketModel!
+  product: ProductModel!
+  count: Int!
+}
+
 type BasketModel {
   id: Int!
-  userId: Int!
-  products: [ProductModel!]
+  items: [BasketItemModel!]!
 }
 
 type Query {

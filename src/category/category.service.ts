@@ -10,7 +10,7 @@ export class CategoryService {
     @InjectRepository(CategoryModel)
     private categoryRepository: Repository<CategoryModel>,
   ) {
-    this.products = JSON.parse(
+    /* this.products = JSON.parse(
       fs.readFileSync('./products.json') as unknown as string,
     );
     this.products.categories.forEach(async (e) => {
@@ -21,7 +21,7 @@ export class CategoryService {
         categoryModel.slug = e.slug;
         this.categoryRepository.save(categoryModel);
       }
-    });
+    }); */
   }
   getAll() {
     return this.categoryRepository.find();

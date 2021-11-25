@@ -11,7 +11,7 @@ export class ProductsService {
     @InjectRepository(ProductModel)
     private productsRepository: Repository<ProductModel>,
   ) {
-    this.products = JSON.parse(
+/*     this.products = JSON.parse(
       fs.readFileSync('./products.json') as unknown as string,
     );
     this.products.products.forEach(async (e) => {
@@ -24,7 +24,7 @@ export class ProductsService {
         categoryModel.price = e.price;
         this.productsRepository.save(categoryModel);
       }
-    });
+    }); */
   }
   getAll() {
     return this.productsRepository.find({ relations: ['category'] });
