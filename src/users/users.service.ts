@@ -14,4 +14,10 @@ export class UsersService {
   async findByUserName(username: string): Promise<UserModel | undefined> {
     return this.usersRepository.findOne({ where: { username } });
   }
+  async create(username: string, password: string) {
+    const user = new UserModel();
+    user.username = username;
+    user.password = password;
+    return this.usersRepository.save(user);
+  }
 }

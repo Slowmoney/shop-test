@@ -28,6 +28,7 @@ type BasketModel {
 }
 
 type Query {
+  refreshAuthToken: AccessTokenModel!
   allCategories: [CategoryModel!]!
   filterCategory(category: String!): [CategoryModel!]!
   filterCategories(category: [String!]!): [CategoryModel!]!
@@ -39,5 +40,6 @@ type Query {
 
 type Mutation {
   login(password: String!, username: String!): AccessTokenModel!
+  register(password2: String!, password: String!, username: String!): AccessTokenModel!
   addProductToBasket(productId: Float!): BasketModel!
 }

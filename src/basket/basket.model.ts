@@ -18,7 +18,7 @@ export default class BasketModel {
   @Field(() => Int)
   @PrimaryGeneratedColumn()
   id: number;
-  
+
   @Field(() => Int)
   @Column({ nullable: true })
   userId: number;

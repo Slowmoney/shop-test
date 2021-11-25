@@ -1,4 +1,8 @@
-import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
+import {
+  ForbiddenException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserInputError } from 'apollo-server-express';
 import { Repository } from 'typeorm';
@@ -26,7 +30,8 @@ export class BasketService {
   }
   async addProduct(basket: BasketModel, productId: number) {
     const product = await this.productService.findById(productId);
-    if (!product) throw new NotFoundException(`Not Found Product By id: ${productId}`);
+    if (!product)
+      throw new NotFoundException(`Not Found Product By id: ${productId}`);
     console.log(product);
     console.log(basket);
     if (!basket.products) basket.products = [product];
