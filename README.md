@@ -60,8 +60,8 @@ $ npm run test:cov
 
 ## Настройка бд;
 
-1. createdb database_name
-2. ormconfig.json
+1. Создайте бд в postgres с именем database_name
+2. заполните ormconfig.json
 {
     "type": "postgres",
     "host": ip_database,
